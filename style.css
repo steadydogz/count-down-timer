@@ -48,6 +48,19 @@ header {
     justify-content: center;
 }
 
+@media (max-width:375px) {
+    header {
+        height: 510px;
+    }
+}
+
+@media (max-width:320px) {
+    header {
+        height: 480px;
+    }
+}
+
+
 .display {
     width: min(323px, 85%);
     height: 147px;
@@ -113,7 +126,7 @@ header {
     font-size: 32px;
 }
 
-.display_info .timer_control{
+.display_info .timer_control {
     width: 60%;
 
     display: flex;
@@ -123,7 +136,7 @@ header {
     margin: 10px auto;
 }
 
-.display_info .timer_control>button:hover{
+.display_info .timer_control>button:hover {
     scale: 1.1;
 }
 
