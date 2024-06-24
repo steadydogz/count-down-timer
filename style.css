@@ -37,23 +37,24 @@ header {
 
     display: flex;
     justify-content: center;
+}
 
-    & .display {
-        width: min(318px, 85%);
-        height: 142px;
+.display {
+    width: min(318px, 85%);
+    height: 142px;
 
-        background-color: #FBFBFE;
+    background-color: #FBFBFE;
 
-        border-radius: 25px;
+    border-radius: 25px;
 
-        outline: 5px solid;
+    border: 5px solid;
 
-        margin-top: 40px;
+    margin-top: 40px;
 
-        position: relative;
-        padding: 10px;
+    position: relative;
+    padding: 10px;
 
-        /* & .more_btn {
+    /* & .more_btn {
             border: none;
 
             background-color: transparent;
@@ -68,7 +69,6 @@ header {
             top: 20px;
         } */
 
-    }
 }
 
 .add {
@@ -84,12 +84,14 @@ header {
 
     margin-top: 10px;
 
-    &:hover {
-        background-color: #81808F;
-    }
 
-    & img {
-        width: 57px;
-        height: 52.25px;
-    }
+}
+
+.add:hover {
+    background-color: #81808F;
+}
+
+.add img {
+    width: 57px;
+    height: 52.25px;
 }
