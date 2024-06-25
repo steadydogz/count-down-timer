@@ -6,6 +6,7 @@
     margin: 0;
 
     transition: all 200ms ease;
+    font-size: 100%;
 }
 
 img {
@@ -17,6 +18,10 @@ button {
     border: none;
 
     cursor: pointer;
+}
+
+button:hover {
+    scale: 1.1;
 }
 
 body {
@@ -37,6 +42,10 @@ body {
 }
 
 header {
+    position: relative;
+
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
     background-color: #81808F;
 
     width: min(100%, 100%);
@@ -60,7 +69,7 @@ header {
     }
 }
 
-
+/* timer display */
 .display {
     width: min(323px, 85%);
     height: 147px;
@@ -74,22 +83,6 @@ header {
     margin-top: 40px;
 
     padding: 15px;
-
-    /* & .more_btn {
-            border: none;
-
-            background-color: transparent;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            position: absolute;
-
-            left: 20px;
-            top: 20px;
-        } */
-
 }
 
 .display_info {
@@ -163,4 +156,63 @@ header {
 .add img {
     width: 57px;
     height: 52.25px;
+}
+
+/* timer setter display */
+.timer_setter {
+    border: 1px solid;
+    border-radius: 20px;
+
+    background-color: #bab9c5;
+
+    width: min(370px, 85%);
+    height: 254px;
+
+    position: absolute;
+
+    top: 230px;
+
+    padding: 10px;
+
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.timer_setter .timer_setter_inner_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 50px;
+
+    /* border: 1px solid; */
+}
+
+.timer_setter .timer_setter_inner_container .hour_timer span {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+
+    border: 1px solid #FBFBFE;
+    border-radius: 10px;
+
+    padding: 0px 15px;
+
+    color: #FBFBFE;
+}
+
+.timer_setter .add_timer {
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+
+    color: black;
+
+    border: 2px solid;
+    border-radius: 20px;
+    background-color: #FBFBFE;
+
+    width: 113px;
+    height: 50px;
+
+    margin-top: 10px;
 }

@@ -7,15 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Krub&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
     <title>COUNT DOWN TIMER</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-
+        <!-- header section -->
         <header>
-            <div class="display">
+            <!-- TIMER DISPLAY -->
+            <!-- <div class="display">
 
                 <div class="display_info">
                     <button class="more_menu">
@@ -39,7 +43,91 @@
                     </div>
                 </div>
 
+            </div> -->
+
+            <!-- TIMER SETTER POPUP -->
+            <div class="timer_setter">
+
+                <div class="timer_setter_inner_container">
+
+                    <div class="hour_timer">
+
+                        <button id="increment_hour">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"
+                                fill="whitesmoke">
+                                <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z" />
+                            </svg>
+                        </button>
+
+                        <br>
+
+                        <span id="hour_display">0</span>
+
+                        <br>
+
+                        <button id="decrement_hour">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"
+                                fill="whitesmoke">
+                                <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <div class="hour_timer">
+
+                        <button id="increment_hour">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"
+                                fill="whitesmoke">
+                                <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z" />
+                            </svg>
+                        </button>
+
+                        <br>
+
+                        <span id="hour_display">0</span>
+
+                        <br>
+
+                        <button id="decrement_hour">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"
+                                fill="whitesmoke">
+                                <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <div class="hour_timer">
+
+                        <button id="increment_hour">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"
+                                fill="whitesmoke">
+                                <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z" />
+                            </svg>
+                        </button>
+
+                        <br>
+
+                        <span id="hour_display">0</span>
+
+                        <br>
+
+                        <button id="decrement_hour">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"
+                                fill="whitesmoke">
+                                <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button class="add_timer" id="add_timer">ADD</button>
+
             </div>
+
         </header>
 
         <button class="add">
