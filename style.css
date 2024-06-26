@@ -63,11 +63,11 @@ header {
     scroll-snap-type: y mandatory;
 }
 
-/* @media (max-width:375px) {
+@media (max-width:375px) {
     header {
         height: 510px;
     }
-} */
+}
 
 @media (max-width:320px) {
     header {
@@ -185,6 +185,7 @@ header {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 
     display: none;
+    z-index: 2;
 }
 
 .timer_setter::before {
@@ -234,20 +235,6 @@ header {
 
     color: #FBFBFE;
 }
-
-/* .timer_setter .timer_setter_inner_container .hour_timer span {
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 50px;
-
-    border: 1px solid #FBFBFE;
-    border-radius: 10px;
-
-    padding: 0px 15px;
-
-    color: #FBFBFE;
-} */
-
 
 .timer_setter_inner_container .hour,
 .minutes,
