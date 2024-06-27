@@ -2,8 +2,25 @@
 const header = document.querySelector("header");
 const NewCountDownBtn = document.getElementById("add_new");
 const countDownSetterDiv = document.getElementById("timer_setter");
-const countDownDisplay = document.getElementById("count_down_display");
+// const countDownDisplay = document.getElementById("count_down_display");
 const addNewCountDownBtn = document.getElementById("add_timer");
+
+// COUNT DOWN SETTER VARIABLES
+// FOR HOURS DISPLAY
+const incrementHour = document.getElementById("increment_hour");
+const decrementHour = document.getElementById("decrement_hour");
+const hourDisplay = document.getElementById("hour_display");
+
+// FOR MINUTES DISPLAY
+const incrementMinutes = document.getElementById("increment_minutes");
+const decrementMinutes = document.getElementById("decrement_minutes");
+const minutesDisplay = document.getElementById("minutes_display");
+
+// FOR SECONDS DISPLAY
+const incrementSeconds = document.getElementById("increment_seconds");
+const decrementSeconds = document.getElementById("decrement_seconds");
+const secondsDisplay = document.getElementById("seconds_display");
+
 
 // FUNCTION
 // FUNCTION SET COUNT DOWN
