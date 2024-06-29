@@ -125,29 +125,37 @@ function createNewCountDown() {
     resetBtn.className = "reset_btn";
     moreMenuBtn.className = "more_menu";
 
-    // playBtn.addEventListener("click", () => {
-        // setInterval(() => {
-        //     if (hourSpan.innerText == 0) {
-        //         clearInterval();
-        //     } else {
-        //         hourSpan.innerText--;
-        //     }
-        // }, 3600000);
-        // setInterval(() => {
-        //     if (minuteSpan.innerText == 0) {
-        //         clearInterval();
-        //     } else {
-        //         minuteSpan.innerText--;
-        //     }
-        // }, 60000);
-        // setInterval(() => {
-        //     if (secondSpan.innerText == 0) {
-        //         clearInterval();
-        //     } else {
-        //         secondSpan.innerText--;
-        //     }
-        // }, 1000);
-    // })
+    playBtn.addEventListener("click", () => {
+        setInterval(() => {
+            if (hourSpan.innerText == 0) {
+                clearInterval();
+            } else {
+                hourSpan.innerText--;
+            }
+        }, 3600000);
+        setInterval(() => {
+            if (minuteSpan.innerText == 0) {
+                clearInterval();
+            } else {
+                minuteSpan.innerText--;
+            }
+        }, 60000);
+        setInterval(() => {
+            if (secondSpan.innerText <= 0) {
+                clearInterval();
+            } else {
+                secondSpan.innerText--;
+            }
+        }, 1000);
+
+        setInterval(() => {
+            if (secondSpan.innerText <= 0 && minuteSpan.innerText != 0) {
+                secondSpan.innerText = 59;
+                minuteSpan.innerText = minutesCount-1;
+                console.log("count down ends")
+            }
+        }, 1000);
+    })
 
 
     // ALL IMG ELEMENTS
