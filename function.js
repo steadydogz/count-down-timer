@@ -23,7 +23,7 @@ const secondsDisplay = document.getElementById("seconds_display");
 
 
 // FUNCTION
-// FUNCTION SET COUNT DOWN
+// FUNCTION ADD COUNT DOWN
 function setNewCountDown() {
     countDownSetterDiv.style.display = "block";
 }
