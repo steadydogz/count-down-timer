@@ -2,7 +2,6 @@
 const header = document.querySelector("header");
 const NewCountDownBtn = document.getElementById("add_new");
 const countDownSetterDiv = document.getElementById("timer_setter");
-// const countDownDisplay = document.getElementById("count_down_display");
 const addNewCountDownBtn = document.getElementById("add_timer");
 
 // COUNT DOWN SETTER VARIABLES
@@ -21,66 +20,11 @@ const incrementSeconds = document.getElementById("increment_seconds");
 const decrementSeconds = document.getElementById("decrement_seconds");
 const secondsDisplay = document.getElementById("seconds_display");
 
-// function add hour value
+// set hour, minutes, and seconds value to 0
 let hourCount = 0;
 let minutesCount = 0;
 let secondsCount = 0;
 
-incrementHour.addEventListener("click", () => {
-    hourCount++;
-    if (hourDisplay.innerText == 12) {
-        hourCount = 0;
-    }
-
-    hourDisplay.innerText = hourCount;
-})
-
-decrementHour.addEventListener("click", () => {
-    hourCount--;
-    if (hourDisplay.innerText == 0) {
-        hourCount = 12;
-    }
-
-    hourDisplay.innerText = hourCount;
-})
-
-// function add minutes value
-incrementMinutes.addEventListener("click", () => {
-    minutesCount++;
-    if (minutesDisplay.innerText == 59) {
-        minutesCount = 0;
-    }
-
-    minutesDisplay.innerText = minutesCount;
-})
-
-decrementMinutes.addEventListener("click", () => {
-    minutesCount--;
-    if (minutesDisplay.innerText == 0) {
-        minutesCount = 59;
-    }
-
-    minutesDisplay.innerText = minutesCount;
-})
-
-// function add seconds value
-incrementSeconds.addEventListener("click", () => {
-    secondsCount++;
-    if (secondsDisplay.innerText == 59) {
-        secondsCount = 0;
-    }
-
-    secondsDisplay.innerText = secondsCount;
-})
-
-decrementSeconds.addEventListener("click", () => {
-    secondsCount--;
-    if (secondsDisplay.innerText == 0) {
-        secondsCount = 59;
-    }
-
-    secondsDisplay.innerText = secondsCount;
-})
 
 // FUNCTION
 // FUNCTION ADD COUNT DOWN
@@ -107,9 +51,9 @@ function createNewCountDown() {
     const secondSpan = document.createElement("span");
 
     // ALL SPAN VALUES
-    hourSpan.textContent = "00";
-    minuteSpan.textContent = "00";
-    secondSpan.textContent = "00";
+    hourSpan.innerText = "00";
+    minuteSpan.innerText = "00";
+    secondSpan.innerText = "00";
 
     // ALL BUTTON ELEMENTS
     const pauseBtn = document.createElement("button");
@@ -150,6 +94,7 @@ function createNewCountDown() {
     playBtn.append(playIMg);
     resetBtn.append(resetIMg);
 
+    return hourSpan;
 }
 
 // FUNCTION ADD NEW COUNT DOWN
@@ -158,6 +103,81 @@ function addNewCountDown() {
     createNewCountDown()
 }
 
+function addHour() {
+    hourCount++;
+    if (hourDisplay.innerText == 12) {
+        hourCount = 0;
+    }
+
+    hourDisplay.innerText = hourCount;
+
+    // return hourCount;
+}
+
+function subHour() {
+    hourCount--;
+    if (hourDisplay.innerText == 0) {
+        hourCount = 12;
+    }
+
+    hourDisplay.innerText = hourCount;
+}
+function addMinutes() {
+    minutesCount++;
+    if (minutesDisplay.innerText == 59) {
+        minutesCount = 0;
+    }
+
+    minutesDisplay.innerText = minutesCount;
+}
+function subMinutes() {
+    minutesCount--;
+    if (minutesDisplay.innerText == 0) {
+        minutesCount = 59;
+    }
+
+    minutesDisplay.innerText = minutesCount;
+}
+function addSeconds() {
+    secondsCount++;
+    if (secondsDisplay.innerText == 59) {
+        secondsCount = 0;
+    }
+
+    secondsDisplay.innerText = secondsCount;
+}
+function subSeconds() {
+    secondsCount--;
+    if (secondsDisplay.innerText == 0) {
+        secondsCount = 59;
+    }
+
+    secondsDisplay.innerText = secondsCount;
+}
+
+
 // EVENTS
 NewCountDownBtn.addEventListener("click", setNewCountDown);
 addNewCountDownBtn.addEventListener("click", addNewCountDown)
+incrementHour.addEventListener("click", addHour);
+decrementHour.addEventListener("click", subHour);
+incrementMinutes.addEventListener("click", addMinutes);
+decrementMinutes.addEventListener("click", subMinutes);
+incrementSeconds.addEventListener("click", addSeconds);
+decrementSeconds.addEventListener("click", subSeconds);
+
+function add() {
+    let a = 1;
+    let b = 2;
+
+    let c = 2;
+    let d = 2;
+
+    let cd = c + d;
+    let ab = a + b;
+
+    return ab, cd;
+}
+
+let e = add();
+console.log(e);
