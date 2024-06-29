@@ -28,6 +28,60 @@ let secondsCount = 0;
 
 // FUNCTION
 // FUNCTION ADD COUNT DOWN
+function addHour() {
+    hourCount++;
+    if (hourDisplay.innerText == 12) {
+        hourCount = 0;
+    }
+
+    hourDisplay.innerText = hourCount;
+
+    return hourCount;
+}
+function subHour() {
+    hourCount--;
+    if (hourDisplay.innerText == 0) {
+        hourCount = 12;
+    }
+
+    hourDisplay.innerText = hourCount;
+}
+function addMinutes() {
+    minutesCount++;
+    if (minutesDisplay.innerText == 59) {
+        minutesCount = 0;
+    }
+
+    minutesDisplay.innerText = minutesCount;
+
+    return minutesCount;
+}
+function subMinutes() {
+    minutesCount--;
+    if (minutesDisplay.innerText == 0) {
+        minutesCount = 59;
+    }
+
+    minutesDisplay.innerText = minutesCount;
+}
+function addSeconds() {
+    secondsCount++;
+    if (secondsDisplay.innerText == 59) {
+        secondsCount = 0;
+    }
+
+    secondsDisplay.innerText = secondsCount;
+
+    return secondsCount;
+}
+function subSeconds() {
+    secondsCount--;
+    if (secondsDisplay.innerText == 0) {
+        secondsCount = 59;
+    }
+
+    secondsDisplay.innerText = secondsCount;
+}
 function setNewCountDown() {
     countDownSetterDiv.style.display = "block";
 }
@@ -55,6 +109,10 @@ function createNewCountDown() {
     minuteSpan.innerText = "00";
     secondSpan.innerText = "00";
 
+    hourSpan.innerHTML = hourCount;
+    secondSpan.innerText = secondsCount;
+    minuteSpan.innerText = minutesCount;
+
     // ALL BUTTON ELEMENTS
     const pauseBtn = document.createElement("button");
     const playBtn = document.createElement("button");
@@ -66,6 +124,31 @@ function createNewCountDown() {
     playBtn.className = "play_btn";
     resetBtn.className = "reset_btn";
     moreMenuBtn.className = "more_menu";
+
+    // playBtn.addEventListener("click", () => {
+        // setInterval(() => {
+        //     if (hourSpan.innerText == 0) {
+        //         clearInterval();
+        //     } else {
+        //         hourSpan.innerText--;
+        //     }
+        // }, 3600000);
+        // setInterval(() => {
+        //     if (minuteSpan.innerText == 0) {
+        //         clearInterval();
+        //     } else {
+        //         minuteSpan.innerText--;
+        //     }
+        // }, 60000);
+        // setInterval(() => {
+        //     if (secondSpan.innerText == 0) {
+        //         clearInterval();
+        //     } else {
+        //         secondSpan.innerText--;
+        //     }
+        // }, 1000);
+    // })
+
 
     // ALL IMG ELEMENTS
     const moreMenuBtnImg = document.createElement("img");
@@ -93,8 +176,6 @@ function createNewCountDown() {
     pauseBtn.append(pauseIMg);
     playBtn.append(playIMg);
     resetBtn.append(resetIMg);
-
-    return hourSpan;
 }
 
 // FUNCTION ADD NEW COUNT DOWN
@@ -102,59 +183,6 @@ function addNewCountDown() {
     countDownSetterDiv.style.display = "none";
     createNewCountDown()
 }
-
-function addHour() {
-    hourCount++;
-    if (hourDisplay.innerText == 12) {
-        hourCount = 0;
-    }
-
-    hourDisplay.innerText = hourCount;
-
-    // return hourCount;
-}
-
-function subHour() {
-    hourCount--;
-    if (hourDisplay.innerText == 0) {
-        hourCount = 12;
-    }
-
-    hourDisplay.innerText = hourCount;
-}
-function addMinutes() {
-    minutesCount++;
-    if (minutesDisplay.innerText == 59) {
-        minutesCount = 0;
-    }
-
-    minutesDisplay.innerText = minutesCount;
-}
-function subMinutes() {
-    minutesCount--;
-    if (minutesDisplay.innerText == 0) {
-        minutesCount = 59;
-    }
-
-    minutesDisplay.innerText = minutesCount;
-}
-function addSeconds() {
-    secondsCount++;
-    if (secondsDisplay.innerText == 59) {
-        secondsCount = 0;
-    }
-
-    secondsDisplay.innerText = secondsCount;
-}
-function subSeconds() {
-    secondsCount--;
-    if (secondsDisplay.innerText == 0) {
-        secondsCount = 59;
-    }
-
-    secondsDisplay.innerText = secondsCount;
-}
-
 
 // EVENTS
 NewCountDownBtn.addEventListener("click", setNewCountDown);
@@ -165,19 +193,3 @@ incrementMinutes.addEventListener("click", addMinutes);
 decrementMinutes.addEventListener("click", subMinutes);
 incrementSeconds.addEventListener("click", addSeconds);
 decrementSeconds.addEventListener("click", subSeconds);
-
-function add() {
-    let a = 1;
-    let b = 2;
-
-    let c = 2;
-    let d = 2;
-
-    let cd = c + d;
-    let ab = a + b;
-
-    return ab, cd;
-}
-
-let e = add();
-console.log(e);
