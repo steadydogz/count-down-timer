@@ -21,6 +21,66 @@ const incrementSeconds = document.getElementById("increment_seconds");
 const decrementSeconds = document.getElementById("decrement_seconds");
 const secondsDisplay = document.getElementById("seconds_display");
 
+// function add hour value
+let hourCount = 0;
+let minutesCount = 0;
+let secondsCount = 0;
+
+incrementHour.addEventListener("click", () => {
+    hourCount++;
+    if (hourDisplay.innerText == 12) {
+        hourCount = 0;
+    }
+
+    hourDisplay.innerText = hourCount;
+})
+
+decrementHour.addEventListener("click", () => {
+    hourCount--;
+    if (hourDisplay.innerText == 0) {
+        hourCount = 12;
+    }
+
+    hourDisplay.innerText = hourCount;
+})
+
+// function add minutes value
+incrementMinutes.addEventListener("click", () => {
+    minutesCount++;
+    if (minutesDisplay.innerText == 59) {
+        minutesCount = 0;
+    }
+
+    minutesDisplay.innerText = minutesCount;
+})
+
+decrementMinutes.addEventListener("click", () => {
+    minutesCount--;
+    if (minutesDisplay.innerText == 0) {
+        minutesCount = 59;
+    }
+
+    minutesDisplay.innerText = minutesCount;
+})
+
+// function add seconds value
+incrementSeconds.addEventListener("click", () => {
+    secondsCount++;
+    if (secondsDisplay.innerText == 59) {
+        secondsCount = 0;
+    }
+
+    secondsDisplay.innerText = secondsCount;
+})
+
+decrementSeconds.addEventListener("click", () => {
+    secondsCount--;
+    if (secondsDisplay.innerText == 0) {
+        secondsCount = 59;
+    }
+
+    secondsDisplay.innerText = secondsCount;
+})
 
 // FUNCTION
 // FUNCTION ADD COUNT DOWN
