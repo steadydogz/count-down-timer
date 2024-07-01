@@ -36,7 +36,6 @@ function addHour() {
 
     hourDisplay.innerText = hourCount;
 
-    return hourCount;
 }
 function subHour() {
     hourCount--;
@@ -54,7 +53,6 @@ function addMinutes() {
 
     minutesDisplay.innerText = minutesCount;
 
-    return minutesCount;
 }
 function subMinutes() {
     minutesCount--;
@@ -72,7 +70,6 @@ function addSeconds() {
 
     secondsDisplay.innerText = secondsCount;
 
-    return secondsCount;
 }
 function subSeconds() {
     secondsCount--;
@@ -126,36 +123,42 @@ function createNewCountDown() {
     moreMenuBtn.className = "more_menu";
 
     playBtn.addEventListener("click", () => {
-        setInterval(() => {
-            if (hourSpan.innerText == 0) {
-                clearInterval();
-            } else {
-                hourSpan.innerText--;
-            }
-        }, 3600000);
-        setInterval(() => {
-            if (minuteSpan.innerText == 0) {
-                clearInterval();
-            } else {
-                minuteSpan.innerText--;
-            }
-        }, 60000);
-        setInterval(() => {
-            if (secondSpan.innerText <= 0) {
-                clearInterval();
-            } else {
+        if (secondSpan.innerText != 0) {
+            setInterval(() => {
                 secondSpan.innerText--;
-            }
-        }, 1000);
 
-        setInterval(() => {
-            if (secondSpan.innerText <= 0 && minuteSpan.innerText != 0) {
-                secondSpan.innerText = 59;
-                minuteSpan.innerText = minutesCount-1;
-                console.log("count down ends")
-            }
-        }, 1000);
+                if(secondSpan.innerText == 0 && minuteSpan.innerText != 0){
+                    secondSpan.innerText = 59;
+                    minuteSpan.innerHTML--;
+                }
+            }, 100);
+        }
     })
+
+    // playBtn.addEventListener("click", () => {
+    //     setInterval(() => {
+    //         if (hourSpan.innerText <= 0) {
+    //             clearInterval();
+    //         } else {
+    //             hourSpan.innerText--;
+    //         }
+    //     }, 3600000);
+    //     setInterval(() => {
+    //         if (minuteSpan.innerText <= 0) {
+    //             clearInterval();
+    //         } else {
+    //             minuteSpan.innerText--;
+    //         }
+    //     }, 60000);
+    //     setInterval(() => {
+    //         if (secondSpan.innerText <= 0) {
+    //             clearInterval();
+    //         } else {
+    //             secondSpan.innerText--;
+    //         }
+    //     }, 1000);
+    // })
+
 
 
     // ALL IMG ELEMENTS
