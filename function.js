@@ -122,44 +122,27 @@ function createNewCountDown() {
     resetBtn.className = "reset_btn";
     moreMenuBtn.className = "more_menu";
 
-    playBtn.addEventListener("click", () => {
-        if (secondSpan.innerText != 0) {
-            setInterval(() => {
-                secondSpan.innerText--;
+    // playBtn.addEventListener("click", ()=>{
+    //     setInterval(() => {
+    //        if(hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0){
+    //         alert("everything is 0")
+    //        } else{
+    //         clearInterval();
+    //         alert("")
+    //        }
+    //     }, 100);
+    // })
 
-                if(secondSpan.innerText == 0 && minuteSpan.innerText != 0){
-                    secondSpan.innerText = 59;
-                    minuteSpan.innerHTML--;
-                }
+    playBtn.addEventListener("click", () => {
+        if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+            clearInterval();
+            alert("clear interval")
+        } else if(hourSpan.innerText == 0 && minuteSpan.innerText >0 && secondSpan.innerText == 0){
+            setInterval(() => {
+                alert("set interval, minutes hand is not empty")
             }, 100);
         }
     })
-
-    // playBtn.addEventListener("click", () => {
-    //     setInterval(() => {
-    //         if (hourSpan.innerText <= 0) {
-    //             clearInterval();
-    //         } else {
-    //             hourSpan.innerText--;
-    //         }
-    //     }, 3600000);
-    //     setInterval(() => {
-    //         if (minuteSpan.innerText <= 0) {
-    //             clearInterval();
-    //         } else {
-    //             minuteSpan.innerText--;
-    //         }
-    //     }, 60000);
-    //     setInterval(() => {
-    //         if (secondSpan.innerText <= 0) {
-    //             clearInterval();
-    //         } else {
-    //             secondSpan.innerText--;
-    //         }
-    //     }, 1000);
-    // })
-
-
 
     // ALL IMG ELEMENTS
     const moreMenuBtnImg = document.createElement("img");
