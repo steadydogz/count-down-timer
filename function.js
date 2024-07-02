@@ -122,6 +122,7 @@ function createNewCountDown() {
     resetBtn.className = "reset_btn";
     moreMenuBtn.className = "more_menu";
 
+    // function to play count down
     playBtn.addEventListener("click", () => {
         if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
             hourSpan.innerText = hourSpan.innerText - 1;
@@ -157,6 +158,10 @@ function createNewCountDown() {
         }
     })
 
+    // function to pause count down
+    // pauseBtn.addEventListener("click",()=>{
+
+    // })
 
     // ALL IMG ELEMENTS
     const moreMenuBtnImg = document.createElement("img");
