@@ -53,7 +53,8 @@ header {
     background-color: #81808F;
 
     width: min(100%, 100%);
-    height: min(556px, 556px);
+    /* height: min(556px, 556px); */
+    height: min(556px, 82%);
 
     border-radius: 0 0 30px 30px;
 
@@ -65,7 +66,7 @@ header {
     overflow-y: auto;
 }
 
-@media (max-width:375px) {
+/* @media (max-width:375px) {
     header {
         height: 510px;
     }
@@ -75,7 +76,7 @@ header {
     header {
         height: 480px;
     }
-}
+} */
 
 /* timer display */
 .display {
