@@ -122,25 +122,28 @@ function createNewCountDown() {
     resetBtn.className = "reset_btn";
     moreMenuBtn.className = "more_menu";
 
-    // playBtn.addEventListener("click", ()=>{
-    //     setInterval(() => {
-    //        if(hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0){
-    //         alert("everything is 0")
-    //        } else{
-    //         clearInterval();
-    //         alert("")
-    //        }
-    //     }, 100);
-    // })
-
     playBtn.addEventListener("click", () => {
-        if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
-            clearInterval();
-            alert("clear interval")
-        } else if(hourSpan.innerText == 0 && minuteSpan.innerText >0 && secondSpan.innerText == 0){
+        if (secondSpan.innerText == 0 && minuteSpan.innerText > 0) {
+
+            minuteSpan.innerText = minuteSpan.innerText - 1;
+            secondSpan.innerText = 59;
+
             setInterval(() => {
-                alert("set interval, minutes hand is not empty")
-            }, 100);
+                secondSpan.innerText--;
+
+                if (secondSpan.innerText == 0 && minuteSpan.innerText > 0) {
+                    minuteSpan.innerText = minuteSpan.innerText - 1;
+                    secondSpan.innerText = 59;
+                } else if (minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
+                    clearInterval()
+                    secondSpan.innerText = secondsCount;
+                } else if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    hourSpan.innerText = hourSpan.innerText - 1;
+                    minuteSpan.innerText = 59;
+                    secondSpan.innerText = 59;
+                }
+            }, 1);
+
         }
     })
 
