@@ -123,7 +123,22 @@ function createNewCountDown() {
     moreMenuBtn.className = "more_menu";
 
     playBtn.addEventListener("click", () => {
-        if (secondSpan.innerText == 0 && minuteSpan.innerText > 0) {
+        if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+            hourSpan.innerText = hourSpan.innerText - 1;
+            minuteSpan.innerText = 59;
+            secondSpan.innerText = 59;
+
+            setInterval(() => {
+                secondSpan.innerText--;
+
+                if (secondSpan.innerText == 0 && minuteSpan.innerText > 0) {
+                    minuteSpan.innerText = minuteSpan.innerText - 1;
+                    secondSpan.innerText = 59;
+                } else if (minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
+                    secondSpan.innerText = secondsCount;
+                }
+            }, 1000);
+        } else if (secondSpan.innerText == 0 && minuteSpan.innerText > 0) {
 
             minuteSpan.innerText = minuteSpan.innerText - 1;
             secondSpan.innerText = 59;
@@ -135,17 +150,13 @@ function createNewCountDown() {
                     minuteSpan.innerText = minuteSpan.innerText - 1;
                     secondSpan.innerText = 59;
                 } else if (minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
-                    clearInterval()
                     secondSpan.innerText = secondsCount;
-                } else if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
-                    hourSpan.innerText = hourSpan.innerText - 1;
-                    minuteSpan.innerText = 59;
-                    secondSpan.innerText = 59;
                 }
-            }, 1);
+            }, 1000);
 
         }
     })
+
 
     // ALL IMG ELEMENTS
     const moreMenuBtnImg = document.createElement("img");
