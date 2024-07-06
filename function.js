@@ -136,11 +136,14 @@ function createNewCountDown() {
                     minuteSpan.innerText = minuteSpan.innerText - 1;
                     secondSpan.innerText = 59;
                 } else if (minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
-                    secondSpan.innerText = secondsCount;
+                    secondSpan.innerText = 0;
+                } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alert("Timer up !");
+                    clearInterval();
                 }
+
             }, 1000);
         } else if (secondSpan.innerText == 0 && minuteSpan.innerText > 0) {
-
             minuteSpan.innerText = minuteSpan.innerText - 1;
             secondSpan.innerText = 59;
 
@@ -151,10 +154,25 @@ function createNewCountDown() {
                     minuteSpan.innerText = minuteSpan.innerText - 1;
                     secondSpan.innerText = 59;
                 } else if (minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
-                    secondSpan.innerText = secondsCount;
+                    secondSpan.innerText = 0;
+                } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alert("Timer up !");
+                    clearInterval();
                 }
+
             }, 1000);
 
+        } else if (minuteSpan.innerText == 0 && secondSpan.innerText > 0) {
+            setInterval(() => {
+                secondSpan.innerText--;
+
+                if (minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
+                    secondSpan.innerText = 0;
+                } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alert("Timer up !");
+                    clearInterval();
+                }
+            }, 1000);
         }
     })
 
