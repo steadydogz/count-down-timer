@@ -138,7 +138,7 @@ function createNewCountDown() {
                 } else if (minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
-                    alert("Timer up !");
+                    alert("Timer up ! 🎉");
                     clearInterval();
                 }
 
@@ -156,7 +156,7 @@ function createNewCountDown() {
                 } else if (minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
-                    alert("Timer up !");
+                    alert("Timer up ! 🎉");
                     clearInterval();
                 }
 
@@ -169,17 +169,29 @@ function createNewCountDown() {
                 if (minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
-                    alert("Timer up !");
+                    alert("Timer up ! 🎉");
                     clearInterval();
                 }
             }, 1000);
         }
+
+        if(hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0){
+            alert("Timer not set !")
+        } 
     })
 
     // function to pause count down
     // pauseBtn.addEventListener("click",()=>{
 
     // })
+
+    // function to reset timer to set value
+    function resetCount(){
+        let hourValue = addHour(hourCount)
+        hourSpan.innerText = hourValue;
+    }
+
+    resetBtn.addEventListener("click", resetCount);
 
     // ALL IMG ELEMENTS
     const moreMenuBtnImg = document.createElement("img");
