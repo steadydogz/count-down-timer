@@ -143,7 +143,7 @@ function createNewCountDown() {
                 }
 
             }, 1000);
-        } else if (secondSpan.innerText == 0 && minuteSpan.innerText > 0) {
+        } else if (secondSpan.innerText == 0 && minuteSpan.innerText > 0 /*|| minuteSpan.innerText > 0 && secondSpan.innerText > 0*/) {
             minuteSpan.innerText = minuteSpan.innerText - 1;
             secondSpan.innerText = 59;
 
@@ -159,7 +159,6 @@ function createNewCountDown() {
                     alert("Timer up ! 🎉");
                     clearInterval();
                 }
-
             }, 1000);
 
         } else if (minuteSpan.innerText == 0 && secondSpan.innerText > 0) {
@@ -173,25 +172,28 @@ function createNewCountDown() {
                     clearInterval();
                 }
             }, 1000);
-        }
-
-        if(hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0){
+        } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
             alert("Timer not set !")
-        } 
+        }
+         else if (minuteSpan.innerText > 0 && secondSpan.innerText > 0) {
+            minuteSpan.innerText = minuteSpan.innerText - 1;
+            secondSpan.innerText = 59;
+
+            setInterval(() => {
+                secondSpan.innerText--;
+
+                if (secondSpan.innerText == 0 && minuteSpan.innerText > 0) {
+                    minuteSpan.innerText = minuteSpan.innerText - 1;
+                    secondSpan.innerText = 59;
+                } else if (minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
+                    secondSpan.innerText = 0;
+                } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alert("Timer up ! 🎉");
+                    clearInterval();
+                }
+            }, 1000);
+        }
     })
-
-    // function to pause count down
-    // pauseBtn.addEventListener("click",()=>{
-
-    // })
-
-    // function to reset timer to set value
-    function resetCount(){
-        let hourValue = addHour(hourCount)
-        hourSpan.innerText = hourValue;
-    }
-
-    resetBtn.addEventListener("click", resetCount);
 
     // ALL IMG ELEMENTS
     const moreMenuBtnImg = document.createElement("img");
