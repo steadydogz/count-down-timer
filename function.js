@@ -242,6 +242,15 @@ function createNewCountDown() {
                     alert("Timer up ! 🎉");
                 }
             }, 1000);
+        } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText > 0) {
+            setInterval(() => {
+                secondSpan.innerText--;
+                if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
+                    secondSpan.innerText = 0;
+                } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alert("Timer up ! 🎉");
+                }
+            }, 1000);
         }
     })
 
