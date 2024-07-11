@@ -124,28 +124,26 @@ function createNewCountDown() {
 
     // function to play count down
     playBtn.addEventListener("click", () => {
-        if (hourSpan.innerText > 0 && minuteSpan.innerText > 0 && secondSpan.innerText > 0) {
+        if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+            hourSpan.innerText = hourSpan.innerText - 1;
+            minuteSpan.innerText = 59;
+            secondSpan.innerText = 59;
             setInterval(() => {
                 secondSpan.innerText--;
-                if (hourSpan.innerText > 0 && minuteSpan.innerText > 0 && secondSpan.innerText == 0) {
-                    secondSpan.innerText = 59;
-                    minuteSpan.innerText = minuteSpan.innerText - 1;
-                } else if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
                     hourSpan.innerText = hourSpan.innerText - 1;
                     minuteSpan.innerText = 59;
+                    secondSpan.innerText = 59;
+                } else if (hourSpan.innerText > 0 && minuteSpan.innerText > 0 && secondSpan.innerText == 0) {
+                    minuteSpan.innerText = minuteSpan.innerText - 1;
                     secondSpan.innerText = 59;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText > 0 && secondSpan.innerText == 0) {
                     minuteSpan.innerText = minuteSpan.innerText - 1;
                     secondSpan.innerText = 59;
-                } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText > 0) {
-                    secondSpan--
-                } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
+                } else if(hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText < 0){
                     secondSpan.innerText = 0;
-                } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
-                    alert("Timer up 🎉");
-                    clearInterval();
                 }
-            }, 1000);
+            }, 1);
         }         //  else if (secondSpan.innerText == 0 && minuteSpan.innerText > 0) {
         //     minuteSpan.innerText = minuteSpan.innerText - 1;
         //     secondSpan.innerText = 59;
