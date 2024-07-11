@@ -145,9 +145,8 @@ function createNewCountDown() {
                     alert("Timer up 🎉");
                     clearInterval();
                 }
-            }, 10);
-        }
-        //  else if (secondSpan.innerText == 0 && minuteSpan.innerText > 0) {
+            }, 1000);
+        }         //  else if (secondSpan.innerText == 0 && minuteSpan.innerText > 0) {
         //     minuteSpan.innerText = minuteSpan.innerText - 1;
         //     secondSpan.innerText = 59;
 
