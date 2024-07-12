@@ -122,8 +122,16 @@ function createNewCountDown() {
     resetBtn.className = "reset_btn";
     moreMenuBtn.className = "more_menu";
 
+    // pauseBtn.style.display = "none";
+    pauseBtn.style.opacity = "10%";
+
     // function to play count down
     playBtn.addEventListener("click", () => {
+        // pauseBtn.style.display = "block";
+        // playBtn.style.display = "none";
+        pauseBtn.style.opacity = "100%";
+        playBtn.style.opacity = "10%";
+
         if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
             hourSpan.innerText = hourSpan.innerText - 1;
             minuteSpan.innerText = 59;
@@ -247,6 +255,14 @@ function createNewCountDown() {
                 }
             }, 1000);
         }
+    })
+
+    // function to pause count down
+    pauseBtn.addEventListener("click", ()=>{
+        // pauseBtn.style.display = "none";
+        // playBtn.style.display = "block";
+        pauseBtn.style.opacity = "10%";
+        playBtn.style.opacity = "100%";
     })
 
     // ALL IMG ELEMENTS
