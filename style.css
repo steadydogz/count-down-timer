@@ -91,6 +91,11 @@ header {
     left: 0;
 }
 
+.display_info .more_menu img{
+    width: 1.7rem;
+    height: auto;
+}
+
 .display_info .more_menu:hover {
     scale: 1.1;
 }

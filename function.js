@@ -114,16 +114,30 @@ function createNewCountDown() {
     const pauseBtn = document.createElement("button");
     const playBtn = document.createElement("button");
     const resetBtn = document.createElement("button");
-    const moreMenuBtn = document.createElement("button");
+    const moreBtn = document.createElement("button");
 
     // ALL BUTTON CLASSNAME
     pauseBtn.className = "pause_btn";
     playBtn.className = "play_btn";
     resetBtn.className = "reset_btn";
-    moreMenuBtn.className = "more_menu";
+    moreBtn.className = "more_menu";
 
-    // pauseBtn.style.display = "none";
+    // ALL IMG ELEMENTS
+    const deleteImg = document.createElement("img");
+    const moreImg = document.createElement("img");
+    const pauseIMg = document.createElement("img");
+    const playIMg = document.createElement("img");
+    const resetIMg = document.createElement("img");
+
+    // ALL IMG SRC
+    deleteImg.src = "assests/delete.png";
+    moreImg.src = "assests/more.png";
+    pauseIMg.src = "assests/pause.png";
+    playIMg.src = "assests/play.png";
+    resetIMg.src = "assests/reset.png";
+
     pauseBtn.style.opacity = "10%";
+    deleteImg.style.display = "none";
 
     // function to play count down
     playBtn.addEventListener("click", () => {
@@ -258,36 +272,36 @@ function createNewCountDown() {
     })
 
     // function to pause count down
-    pauseBtn.addEventListener("click", ()=>{
+    pauseBtn.addEventListener("click", () => {
         // pauseBtn.style.display = "none";
         // playBtn.style.display = "block";
         pauseBtn.style.opacity = "10%";
         playBtn.style.opacity = "100%";
+
+        alert("COMING SOON !😘")
     })
 
-    // ALL IMG ELEMENTS
-    const moreMenuBtnImg = document.createElement("img");
-    const pauseIMg = document.createElement("img");
-    const playIMg = document.createElement("img");
-    const resetIMg = document.createElement("img");
+    // function to delete count down
+    moreBtn.addEventListener("click", () => {
+        moreImg.style.display = "none";
+        deleteImg.style.display = "block";
 
-    // ALL IMG SRC
-    moreMenuBtnImg.src = "assests/more.png";
-    pauseIMg.src = "assests/pause.png";
-    playIMg.src = "assests/play.png";
-    resetIMg.src = "assests/reset.png";
+        deleteImg.addEventListener("click", () => {
+            timerContainer.remove()
+        })
+    })
 
     // APPEND THE DIVS TO THEIR RESPECTIVE PARENTS 
     header.append(timerContainer)
     timerContainer.append(timerInfo);
-    timerInfo.append(timerDisplay, timerControl, moreMenuBtn);
+    timerInfo.append(timerDisplay, timerControl, moreBtn);
 
     // APPEND THE SPAN AND BUTTON INSIDE THEIR RESPECTIVE DIVS
     timerDisplay.append(hourSpan, minuteSpan, secondSpan);
     timerControl.append(pauseBtn, playBtn, resetBtn);
 
     // APPEND THE BUTTONS
-    moreMenuBtn.append(moreMenuBtnImg);
+    moreBtn.append(deleteImg, moreImg);
     pauseBtn.append(pauseIMg);
     playBtn.append(playIMg);
     resetBtn.append(resetIMg);
