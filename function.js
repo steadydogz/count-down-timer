@@ -278,7 +278,7 @@ function createNewCountDown() {
 
     // function to pause count down
     pauseBtn.addEventListener("click", () => {
-        pauseBtn.style.display= "none";
+        pauseBtn.style.display = "none";
         playBtn.style.display = "block";
         // pauseBtn.style.opacity = "10%";
         // playBtn.style.opacity = "100%";
@@ -316,8 +316,12 @@ function createNewCountDown() {
 
 // FUNCTION ADD NEW COUNT DOWN
 function addNewCountDown() {
-    countDownSetterDiv.style.display = "none";
-    createNewCountDown()
+    if (hourDisplay.innerText == 0 && minutesDisplay.innerText == 0 && secondsDisplay.innerText == 0) {
+        alert("count down not set !")
+    } else {
+        countDownSetterDiv.style.display = "none";
+        createNewCountDown()
+    }
 }
 
 // EVENTS
