@@ -136,21 +136,26 @@ function createNewCountDown() {
     playIMg.src = "assests/play.png";
     resetIMg.src = "assests/reset.png";
 
-    pauseBtn.style.opacity = "10%";
+    // pauseBtn.style.opacity = "10%";
+    pauseBtn.style.display = "none";
     deleteImg.style.display = "none";
 
     // function to play count down
+    let isPause;
     playBtn.addEventListener("click", () => {
-        // pauseBtn.style.display = "block";
-        // playBtn.style.display = "none";
-        pauseBtn.style.opacity = "100%";
-        playBtn.style.opacity = "10%";
+        pauseBtn.style.display = "block";
+        playBtn.style.display = "none";
+        // pauseBtn.style.opacity = "100%";
+        // playBtn.style.opacity = "10%";
+        playBtn.disabled = true;
+        pauseBtn.disabled = false;
 
         if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
             hourSpan.innerText = hourSpan.innerText - 1;
             minuteSpan.innerText = 59;
             secondSpan.innerText = 59;
-            setInterval(() => {
+
+            isPause = setInterval(() => {
                 secondSpan.innerText--;
                 if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
                     hourSpan.innerText = hourSpan.innerText - 1;
@@ -171,7 +176,7 @@ function createNewCountDown() {
         } else if (hourSpan.innerText > 0 && minuteSpan.innerText > 0 && secondSpan.innerText == 0) {
             minuteSpan.innerText = minuteSpan.innerText - 1;
             secondSpan.innerText = 59;
-            setInterval(() => {
+            isPause = setInterval(() => {
                 secondSpan.innerText--;
                 if (hourSpan.innerText > 0 && minuteSpan.innerText > 0 && secondSpan.innerText == 0) {
                     minuteSpan.innerText = minuteSpan.innerText - 1;
@@ -193,7 +198,7 @@ function createNewCountDown() {
                 }
             }, 1000);
         } else if (hourSpan.innerText > 0 && minuteSpan.innerText > 0 && secondSpan.innerText > 0) {
-            setInterval(() => {
+            isPause = setInterval(() => {
                 secondSpan.innerText--;
                 if (hourSpan.innerText > 0 && minuteSpan.innerText > 0 && secondSpan.innerText == 0) {
                     minuteSpan.innerText = minuteSpan.innerText - 1;
@@ -215,7 +220,7 @@ function createNewCountDown() {
                 }
             }, 1000);
         } else if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText > 0) {
-            setInterval(() => {
+            isPause = setInterval(() => {
                 secondSpan.innerText--;
                 if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
                     hourSpan.innerText = hourSpan.innerText - 1;
@@ -236,7 +241,7 @@ function createNewCountDown() {
         } else if (hourSpan.innerText == 0 && minuteSpan.innerText > 0 && secondSpan.innerText == 0) {
             minuteSpan.innerText = minuteSpan.innerText - 1;
             secondSpan.innerText = 59;
-            setInterval(() => {
+            isPause = setInterval(() => {
                 secondSpan.innerText--;
                 if (hourSpan.innerText == 0 && minuteSpan.innerText > 0 && secondSpan.innerText == 0) {
                     minuteSpan.innerText = minuteSpan.innerText - 1;
@@ -248,7 +253,7 @@ function createNewCountDown() {
                 }
             }, 1000);
         } else if (hourSpan.innerText == 0 && minuteSpan.innerText > 0 && secondSpan.innerText > 0) {
-            setInterval(() => {
+            isPause = setInterval(() => {
                 secondSpan.innerText--;
                 if (hourSpan.innerText == 0 && minuteSpan.innerText > 0 && secondSpan.innerText == 0) {
                     minuteSpan.innerText = minuteSpan.innerText - 1;
@@ -260,7 +265,7 @@ function createNewCountDown() {
                 }
             }, 1000);
         } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText > 0) {
-            setInterval(() => {
+            isPause = setInterval(() => {
                 secondSpan.innerText--;
                 if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
                     secondSpan.innerText = 0;
@@ -273,12 +278,14 @@ function createNewCountDown() {
 
     // function to pause count down
     pauseBtn.addEventListener("click", () => {
-        // pauseBtn.style.display = "none";
-        // playBtn.style.display = "block";
-        pauseBtn.style.opacity = "10%";
-        playBtn.style.opacity = "100%";
+        pauseBtn.style.display= "none";
+        playBtn.style.display = "block";
+        // pauseBtn.style.opacity = "10%";
+        // playBtn.style.opacity = "100%";
+        playBtn.disabled = false;
+        pauseBtn.disabled = true;
 
-        alert("COMING SOON !😘")
+        clearInterval(isPause);
     })
 
     // function to delete count down
