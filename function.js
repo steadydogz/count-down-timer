@@ -136,19 +136,20 @@ function createNewCountDown() {
     playIMg.src = "assests/play.png";
     resetIMg.src = "assests/reset.png";
 
-    // pauseBtn.style.opacity = "10%";
+    resetBtn.style.opacity = "50%";
     pauseBtn.style.display = "none";
     deleteImg.style.display = "none";
 
     // function to play count down
     let isPause;
+
     playBtn.addEventListener("click", () => {
         pauseBtn.style.display = "block";
         playBtn.style.display = "none";
-        // pauseBtn.style.opacity = "100%";
-        // playBtn.style.opacity = "10%";
         playBtn.disabled = true;
         pauseBtn.disabled = false;
+        resetBtn.disabled = true;
+        resetBtn.style.opacity = "50%";
 
         if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
             hourSpan.innerText = hourSpan.innerText - 1;
@@ -280,10 +281,10 @@ function createNewCountDown() {
     pauseBtn.addEventListener("click", () => {
         pauseBtn.style.display = "none";
         playBtn.style.display = "block";
-        // pauseBtn.style.opacity = "10%";
-        // playBtn.style.opacity = "100%";
         playBtn.disabled = false;
         pauseBtn.disabled = true;
+        resetBtn.disabled = false;
+        resetBtn.style.opacity = "100%";
 
         clearInterval(isPause);
     })
