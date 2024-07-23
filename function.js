@@ -148,8 +148,8 @@ function createNewCountDown() {
         playBtn.style.display = "none";
         playBtn.disabled = true;
         pauseBtn.disabled = false;
-        resetBtn.disabled = true;
-        resetBtn.style.opacity = "50%";
+        // resetBtn.disabled = true;
+        // resetBtn.style.opacity = "50%";
 
         if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
             hourSpan.innerText = hourSpan.innerText - 1;
@@ -317,6 +317,8 @@ function createNewCountDown() {
         hourSpan.innerText = setHour;
         minuteSpan.innerText = setMinutes;
         secondSpan.innerText = setSeconds;
+
+        resetBtn.style.opacity = "50%";
     })
 
     // APPEND THE DIVS TO THEIR RESPECTIVE PARENTS 
