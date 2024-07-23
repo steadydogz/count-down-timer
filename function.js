@@ -298,6 +298,26 @@ function createNewCountDown() {
         })
     })
 
+    // function to reset count down
+    /**
+     I need to set the hour, minutes, and seconds count to a const variable so that 
+     i can store the last state of the hour, minutes, and seconds count 
+     */
+    const setHour = hourCount;
+    const setMinutes = minutesCount;
+    const setSeconds = secondsCount;
+
+    resetBtn.addEventListener("click", () => {
+        clearInterval(isPause);
+
+        playBtn.style.display = "block";
+        pauseBtn.style.display = "none";
+
+        hourSpan.innerText = setHour;
+        minuteSpan.innerText = setMinutes;
+        secondSpan.innerText = setSeconds;
+    })
+
     // APPEND THE DIVS TO THEIR RESPECTIVE PARENTS 
     header.append(timerContainer)
     timerContainer.append(timerInfo);
