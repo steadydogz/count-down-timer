@@ -298,6 +298,7 @@ function createNewCountDown() {
         deleteImg.style.display = "block";
 
         deleteImg.addEventListener("click", () => {
+            alarm.pause();
             timerContainer.remove()
         })
     })
