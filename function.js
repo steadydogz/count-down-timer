@@ -142,6 +142,7 @@ function createNewCountDown() {
 
     // function to play count down
     let isPause;
+    const alarm = new Audio("assests/alarm2.mp3");
 
     playBtn.addEventListener("click", () => {
         pauseBtn.style.display = "block";
@@ -171,6 +172,7 @@ function createNewCountDown() {
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alarm.play();
                     alert("Timer up ! 🎉");
                 }
             }, 1000);
@@ -195,6 +197,7 @@ function createNewCountDown() {
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alarm.play();
                     alert("Timer up ! 🎉");
                 }
             }, 1000);
@@ -217,6 +220,7 @@ function createNewCountDown() {
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alarm.play();
                     alert("Timer up ! 🎉");
                 }
             }, 1000);
@@ -236,6 +240,7 @@ function createNewCountDown() {
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alarm.play();
                     alert("Timer up ! 🎉");
                 }
             }, 1000);
@@ -250,6 +255,7 @@ function createNewCountDown() {
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alarm.play();
                     alert("Timer up ! 🎉");
                 }
             }, 1000);
@@ -262,6 +268,7 @@ function createNewCountDown() {
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alarm.play();
                     alert("Timer up ! 🎉");
                 }
             }, 1000);
@@ -271,6 +278,7 @@ function createNewCountDown() {
                 if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText < 0) {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
+                    alarm.play();
                     alert("Timer up ! 🎉");
                 }
             }, 1000);
@@ -286,6 +294,8 @@ function createNewCountDown() {
         resetBtn.disabled = false;
         resetBtn.style.opacity = "100%";
 
+        alarm.pause();
+
         clearInterval(isPause);
     })
 
@@ -299,6 +309,13 @@ function createNewCountDown() {
         })
     })
 
+    document.addEventListener("keydown", (e) => {
+        if (e.key == " ") {
+            pauseBtn.style.display = "none";
+            playBtn.style.display = "block";
+            alarm.pause();
+        }
+    })
     // function to reset count down
     /**
      I need to set the hour, minutes, and seconds count to a const variable so that 
@@ -356,3 +373,9 @@ incrementMinutes.addEventListener("click", addMinutes);
 decrementMinutes.addEventListener("click", subMinutes);
 incrementSeconds.addEventListener("click", addSeconds);
 decrementSeconds.addEventListener("click", subSeconds);
+
+// document.addEventListener("keydown", (e) => {
+//     if (e.key == " ") {
+//         clearInterval(isPause);
+//     }
+// })
