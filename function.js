@@ -173,7 +173,6 @@ function createNewCountDown() {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
                     alarm.play();
-                    alert("Timer up ! 🎉");
                 }
             }, 1000);
         } else if (hourSpan.innerText > 0 && minuteSpan.innerText > 0 && secondSpan.innerText == 0) {
@@ -198,7 +197,6 @@ function createNewCountDown() {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
                     alarm.play();
-                    alert("Timer up ! 🎉");
                 }
             }, 1000);
         } else if (hourSpan.innerText > 0 && minuteSpan.innerText > 0 && secondSpan.innerText > 0) {
@@ -221,7 +219,6 @@ function createNewCountDown() {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
                     alarm.play();
-                    alert("Timer up ! 🎉");
                 }
             }, 1000);
         } else if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText > 0) {
@@ -241,7 +238,6 @@ function createNewCountDown() {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
                     alarm.play();
-                    alert("Timer up ! 🎉");
                 }
             }, 1000);
         } else if (hourSpan.innerText == 0 && minuteSpan.innerText > 0 && secondSpan.innerText == 0) {
@@ -256,7 +252,6 @@ function createNewCountDown() {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
                     alarm.play();
-                    alert("Timer up ! 🎉");
                 }
             }, 1000);
         } else if (hourSpan.innerText == 0 && minuteSpan.innerText > 0 && secondSpan.innerText > 0) {
@@ -269,7 +264,6 @@ function createNewCountDown() {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
                     alarm.play();
-                    alert("Timer up ! 🎉");
                 }
             }, 1000);
         } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText > 0) {
@@ -279,7 +273,6 @@ function createNewCountDown() {
                     secondSpan.innerText = 0;
                 } else if (hourSpan.innerText == 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
                     alarm.play();
-                    alert("Timer up ! 🎉");
                 }
             }, 1000);
         }
