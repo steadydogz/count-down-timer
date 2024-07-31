@@ -373,9 +373,3 @@ incrementMinutes.addEventListener("click", addMinutes);
 decrementMinutes.addEventListener("click", subMinutes);
 incrementSeconds.addEventListener("click", addSeconds);
 decrementSeconds.addEventListener("click", subSeconds);
-
-// document.addEventListener("keydown", (e) => {
-//     if (e.key == " ") {
-//         clearInterval(isPause);
-//     }
-// })
