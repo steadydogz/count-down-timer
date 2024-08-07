@@ -136,21 +136,23 @@ function createNewCountDown() {
     playIMg.src = "assests/play.png";
     resetIMg.src = "assests/reset.png";
 
+    pauseBtn.style.opacity = "50%";
     resetBtn.style.opacity = "50%";
-    pauseBtn.style.display = "none";
     deleteImg.style.display = "none";
+    pauseBtn.disabled = true;
+    resetBtn.disabled = true;
 
     // function to play count down
     let isPause;
     const alarm = new Audio("assests/alarm2.mp3");
 
     playBtn.addEventListener("click", () => {
-        pauseBtn.style.display = "block";
-        playBtn.style.display = "none";
+        playBtn.style.opacity = "50%";
+        pauseBtn.style.opacity = "100%";
+        resetBtn.style.opacity = "50%";
         playBtn.disabled = true;
         pauseBtn.disabled = false;
         resetBtn.disabled = true;
-        resetBtn.style.opacity = "50%";
 
         if (hourSpan.innerText > 0 && minuteSpan.innerText == 0 && secondSpan.innerText == 0) {
             hourSpan.innerText = hourSpan.innerText - 1;
@@ -280,8 +282,8 @@ function createNewCountDown() {
 
     // function to pause count down
     pauseBtn.addEventListener("click", () => {
-        pauseBtn.style.display = "none";
-        playBtn.style.display = "block";
+        playBtn.style.opacity = "100%";
+        pauseBtn.style.opacity = "50%";
         playBtn.disabled = false;
         pauseBtn.disabled = true;
         resetBtn.disabled = false;
@@ -323,7 +325,7 @@ function createNewCountDown() {
         clearInterval(isPause);
 
         playBtn.style.display = "block";
-        pauseBtn.style.display = "none";
+        pauseBtn.style.opacity = "50%";
 
         hourSpan.innerText = setHour;
         minuteSpan.innerText = setMinutes;
