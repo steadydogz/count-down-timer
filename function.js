@@ -81,6 +81,11 @@ function subSeconds() {
 }
 function setNewCountDown() {
     countDownSetterDiv.style.display = "block";
+
+    const display = document.querySelectorAll(".display");
+    display.forEach(element => {
+        element.style.display = "none";
+    });
 }
 
 function createNewCountDown() {
@@ -301,7 +306,8 @@ function createNewCountDown() {
 
         deleteImg.addEventListener("click", () => {
             alarm.pause();
-            timerContainer.remove()
+            timerContainer.remove();
+            clearInterval(isPause);
         })
     })
 
@@ -362,7 +368,15 @@ function addNewCountDown() {
 
 // EVENTS
 NewCountDownBtn.addEventListener("click", setNewCountDown);
-addNewCountDownBtn.addEventListener("click", addNewCountDown)
+addNewCountDownBtn.addEventListener("click", () => {
+
+    const display = document.querySelectorAll(".display");
+    display.forEach(element => {
+        element.style.display = "block";
+    });
+
+    addNewCountDown();
+})
 incrementHour.addEventListener("click", addHour);
 decrementHour.addEventListener("click", subHour);
 incrementMinutes.addEventListener("click", addMinutes);
